@@ -13,8 +13,8 @@ public class CrudApplication {
 	}
 	//TODO ajustar os codigos para o banco de dados mysql Workbench
 	//TODO senha para isso é mysql -u root p senha root
-	// create database o nome que esta o appro.
-	// dps só rodar tudo pra ver se funciona
-	// pensar em atualizar isso pro desafio usar o mysql no lugar do postgres
+	// TODO create database o nome que esta o appro.
+	//TODO dps só rodar tudo pra ver se funciona
+	// TODO pensar em atualizar isso pro desafio usar o mysql no lugar do postgres
 
 }
