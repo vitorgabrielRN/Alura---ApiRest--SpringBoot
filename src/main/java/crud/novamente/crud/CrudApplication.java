@@ -16,5 +16,6 @@ public class CrudApplication {
 	// TODO create database o nome que esta o appro.
 	//TODO dps só rodar tudo pra ver se funciona
 	// TODO pensar em atualizar isso pro desafio usar o mysql no lugar do postgres
+	//TODO só consigo usar o push via interface do intelijj, pede senha e não sei fazer isos
 
 }
