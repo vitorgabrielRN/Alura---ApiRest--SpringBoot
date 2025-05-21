@@ -1,7 +1,6 @@
-package crud.novamente.crud.Model;
+package crud.novamente.crud.Medicos;
 
-import crud.novamente.crud.Medicos.DadosCadastrosMedicos;
-import crud.novamente.crud.Medicos.Especialidade;
+import crud.novamente.crud.Model.Endereco;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,19 +19,21 @@ public class Medicos {
     private String nome;
     private String crm;
     private String email;
+    private String telefone;
 
     @Enumerated(EnumType.STRING)
     private Especialidade especialidade;
 
     @Embedded
-    private Endereco Endereco;
+    private Endereco endereco;
 
 
     public Medicos(DadosCadastrosMedicos dados){
         this.crm = dados.crm();
         this.email = dados.email();
         this.nome = dados.nome();
-        this.Endereco = new Endereco(dados.endereco());
         this.especialidade = dados.especialidade();
+        this.telefone = dados.telefone();
+        this.endereco = new Endereco(dados.endereco());
     }
 }

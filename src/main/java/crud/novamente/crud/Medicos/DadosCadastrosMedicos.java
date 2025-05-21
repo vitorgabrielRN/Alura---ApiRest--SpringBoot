@@ -1,9 +1,19 @@
 package crud.novamente.crud.Medicos;
 
-public record DadosCadastrosMedicos(String nome,
-                                    String email,
-                                    String crm,
-                                    Especialidade especialidade,
-                                    DadosEndereco endereco
-                                    ) {
-}
+import jakarta.validation.constraints.Pattern;
+
+public record DadosCadastrosMedicos(
+
+String nome,
+
+String email,
+
+@Pattern(regexp = "\\d{4,6}") 
+String crm,
+
+String telefone,
+ 
+Especialidade especialidade,
+  DadosEndereco endereco ) {}        
+
+

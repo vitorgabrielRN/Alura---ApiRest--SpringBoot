@@ -4,12 +4,12 @@ import crud.novamente.crud.Medicos.DadosEndereco;
 import jakarta.persistence.Embeddable;
 import lombok.*;
 
-@Embeddable
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-
+@Embeddable
 public class Endereco {
     private  String logradouro;
     private  String bairro;
@@ -19,6 +19,7 @@ public class Endereco {
     private  String complemento;
     private  String numero;
 
+
     public Endereco(DadosEndereco dados) {
         this.logradouro = dados.logradouro();
         this.cep = dados.cep();
@@ -27,5 +28,5 @@ public class Endereco {
         this.bairro = dados.bairro();
         this.complemento = dados.complemento();
         this.numero = dados.numero();
-    }
+}
 }
