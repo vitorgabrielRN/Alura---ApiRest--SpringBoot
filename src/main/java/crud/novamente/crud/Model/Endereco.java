@@ -2,8 +2,6 @@ package crud.novamente.crud.Model;
 
 import crud.novamente.crud.Medicos.DadosEndereco;
 import jakarta.persistence.Embeddable;
-import jakarta.persistence.Embedded;
-import jakarta.persistence.Entity;
 import lombok.*;
 
 @Embeddable

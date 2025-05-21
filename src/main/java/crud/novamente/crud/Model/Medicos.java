@@ -13,7 +13,7 @@ import lombok.*;
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 
-public class Medico {
+public class Medicos {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,7 +28,7 @@ public class Medico {
     private Endereco Endereco;
 
 
-    public Medico(DadosCadastrosMedicos dados){
+    public Medicos(DadosCadastrosMedicos dados){
         this.crm = dados.crm();
         this.email = dados.email();
         this.nome = dados.nome();

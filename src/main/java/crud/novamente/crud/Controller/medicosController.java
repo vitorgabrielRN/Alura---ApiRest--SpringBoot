@@ -1,9 +1,9 @@
 package crud.novamente.crud.Controller;
 
 import crud.novamente.crud.Medicos.DadosCadastrosMedicos;
-import crud.novamente.crud.Model.Medico;
+import crud.novamente.crud.Model.Medicos;
 import crud.novamente.crud.Repository.MedicosRepository;
-import jakarta.persistence.Access;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,8 +14,9 @@ public class medicosController {
     private MedicosRepository medicosRepository;
 
     @PostMapping
+    @Transactional
     public void cadastrar(@RequestBody DadosCadastrosMedicos dados){
-       medicosRepository.save(new Medico(dados));
+       medicosRepository.save(new Medicos(dados));
 
 
     }
