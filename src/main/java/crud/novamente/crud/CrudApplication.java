@@ -11,12 +11,8 @@ public class CrudApplication {
 		System.out.println("funciona");
 
 	}
-	//TODO ajustar os codigos para o banco de dados mysql Workbench
-	//TODO senha para isso é mysql -u root p senha root
-	// TODO create database o nome que esta o appro.
-	//TODO dps só rodar tudo pra ver se funciona
-	// TODO pensar em atualizar isso pro desafio usar o mysql no lugar do postgres
-	//TODO só consigo usar o push via interface do intelijj, pede senha e não sei fazer isos
-
+	
+	// para controlar os dados das coisas e infos boas! http://localhost:8080/medicos?size=1   Vai retornar apenas a primeira da lista, vide procurar por animes. sacou
+   // para mudar as paginas http://localhost:8080/medicos?size=1  &page=1 usa esse daqui.
 }
 
