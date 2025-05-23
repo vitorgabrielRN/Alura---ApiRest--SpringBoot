@@ -7,7 +7,7 @@ import crud.novamente.crud.Repository.MedicosRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Pageable;
-
+import org.springframework.data.web.PageableDefault;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
@@ -24,8 +24,8 @@ public class medicosController {
     medicosRepository.save(new Medicos(dados));
     }
    
-    @GetMapping
-   public Page<DadosListaMedicos> listar(Pageable paginacao){
+    @GetMapping   
+   public Page<DadosListaMedicos> listar(@PageableDefault(size = 10)Pageable paginacao){
     return medicosRepository.findAll(paginacao).map(DadosListaMedicos::new);
    }
 }
