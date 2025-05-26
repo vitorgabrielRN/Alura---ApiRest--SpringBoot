@@ -1,6 +1,7 @@
 package crud.novamente.crud.Medicos;
 
 public record DadosListaMedicos(
+    Long id,
     String nome,
     String email,
     String crm,
@@ -8,6 +9,6 @@ public record DadosListaMedicos(
 
 
         public DadosListaMedicos(Medicos medicos){
-            this(medicos.getNome(),medicos.getEmail(),medicos.getCrm(), medicos.getEspecialidade());
+            this(medicos.getId(),medicos.getNome(),medicos.getEmail(),medicos.getCrm(), medicos.getEspecialidade());
         }
 }

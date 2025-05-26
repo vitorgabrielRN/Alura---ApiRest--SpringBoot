@@ -1,5 +1,6 @@
 package crud.novamente.crud.Controller;
 
+import crud.novamente.crud.Medicos.DadosAtualizadosMedicos;
 import crud.novamente.crud.Medicos.DadosCadastrosMedicos;
 import crud.novamente.crud.Medicos.DadosListaMedicos;
 import crud.novamente.crud.Medicos.Medicos;
@@ -27,5 +28,12 @@ public class medicosController {
     @GetMapping   
    public Page<DadosListaMedicos> listar(@PageableDefault(size = 10)Pageable paginacao){
     return medicosRepository.findAll(paginacao).map(DadosListaMedicos::new);
+   }
+   
+   @PutMapping
+   @Transactional
+   public void atualizar(@RequestBody DadosAtualizadosMedicos dados){
+    var medico = medicosRepository.getReferenceById(dados.id());
+    medico.atualizarInformacoes(dados);
    }
 }

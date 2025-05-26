@@ -36,4 +36,14 @@ public class Medicos {
         this.telefone = dados.telefone();
         this.endereco = new Endereco(dados.endereco());
     }
+
+
+    public void atualizarInformacoes(DadosAtualizadosMedicos dados) {
+      
+      //caso venha atualizar, tem que fazer nesse estilo, pois o spring vai considerar nulo o que não estiver em condicao
+      // ai é melhor colocar todos, se vai atualizar só um parametro obrigatorio, tem que colocar os if em todos os outros independente do momento.
+        if(dados.nome != null){
+        this.nome =dados.nome();
+       }
+    }
 }
