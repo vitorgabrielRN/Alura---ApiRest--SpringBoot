@@ -20,6 +20,7 @@ public class Medicos {
     private String crm;
     private String email;
     private String telefone;
+    private boolean ativo;
 
     @Enumerated(EnumType.STRING)
     private Especialidade especialidade;
@@ -29,6 +30,7 @@ public class Medicos {
 
 
     public Medicos(DadosCadastrosMedicos dados){
+        this.ativo = true;
         this.crm = dados.crm();
         this.email = dados.email();
         this.nome = dados.nome();
@@ -39,11 +41,19 @@ public class Medicos {
 
 
     public void atualizarInformacoes(DadosAtualizadosMedicos dados) {
-      
-      //caso venha atualizar, tem que fazer nesse estilo, pois o spring vai considerar nulo o que não estiver em condicao
-      // ai é melhor colocar todos, se vai atualizar só um parametro obrigatorio, tem que colocar os if em todos os outros independente do momento.
-        if(dados.nome != null){
-        this.nome =dados.nome();
-       }
+
+        if(dados.nome() != null){
+            this.nome = dados.nome();
+        }
+        if(dados.telefone() !=null)
+            this.telefone = dados.telefone();
+        if(dados.endereco() != null){
+            this.endereco.atualizarEndereco(dados.endereco());
+        }
+    }
+
+    public void excluir() {
+        this.ativo = false;
     }
 }
+

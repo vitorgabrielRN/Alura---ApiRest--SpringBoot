@@ -1,5 +1,6 @@
 package crud.novamente.crud.Controller;
 
+import crud.novamente.crud.Pacientes.DadosAtualizadosPacientes;
 import crud.novamente.crud.Pacientes.DadosListaPacientes;
 import crud.novamente.crud.Pacientes.DadosPacientes;
 import crud.novamente.crud.Pacientes.Paciente;
@@ -8,11 +9,8 @@ import crud.novamente.crud.Repository.PacienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("pacientes")
@@ -29,6 +27,20 @@ public class PacienteController {
     @GetMapping
     public Page<DadosListaPacientes> listaPacientes(Pageable paginacao){
         return repository.findAll(paginacao).map(DadosListaPacientes::new);
+    }
+
+    @PutMapping
+    @Transactional
+    public void atualizar(@RequestBody DadosAtualizadosPacientes dados){
+        var paciente = repository.getReferenceById(dados.id());
+        paciente.atualizarInformacoes(dados);
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluir(@PathVariable Long id){
+        var pacientes = repository.getReferenceById(id);
+        pacientes.excluir();
     }
     
 }

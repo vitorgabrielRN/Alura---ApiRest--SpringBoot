@@ -1,11 +1,14 @@
 package crud.novamente.crud.Medicos;
 
+import jakarta.validation.constraints.NotNull;
+
 public record DadosAtualizadosMedicos(
-    Long id,
-    String nome,
-    String email,
-    String telefone,
-    DadosEndereco endereco
+
+        @NotNull
+        Long id,
+        String nome,
+        String telefone,
+        DadosEndereco endereco
 ) {
 
 }

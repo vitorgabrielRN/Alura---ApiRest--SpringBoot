@@ -35,6 +35,7 @@ public class Paciente {
  
     @Autowired
     private Endereco endereco;
+    private boolean ativos;
 
     public Paciente(DadosPacientes dados){
         this.nome =dados.nome();
@@ -44,4 +45,19 @@ public class Paciente {
         this.endereco = new Endereco(dados.endereco());
     }
 
+    public void atualizarInformacoes(DadosAtualizadosPacientes dados) {
+      if(dados.nome() != null){
+          this.nome = dados.nome();
+      }
+        if(dados.telefone() != null){
+            this.telefone = dados.telefone();
+        }
+        if(dados.endereco() != null){
+            this.endereco.atualizarEndereco(dados.endereco());
+        }
+    }
+
+    public void excluir() {
+        this.ativos = false;
+    }
 }
