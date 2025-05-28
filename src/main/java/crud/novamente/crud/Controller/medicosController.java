@@ -3,7 +3,7 @@ package crud.novamente.crud.Controller;
 import crud.novamente.crud.Medicos.DadosAtualizadosMedicos;
 import crud.novamente.crud.Medicos.DadosCadastrosMedicos;
 import crud.novamente.crud.Medicos.DadosListaMedicos;
-import crud.novamente.crud.Medicos.Medicos;
+import crud.novamente.crud.Model.Medicos;
 import crud.novamente.crud.Repository.MedicosRepository;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Pageable;

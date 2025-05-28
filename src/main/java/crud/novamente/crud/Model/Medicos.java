@@ -1,6 +1,8 @@
-package crud.novamente.crud.Medicos;
+package crud.novamente.crud.Model;
 
-import crud.novamente.crud.Model.Endereco;
+import crud.novamente.crud.Medicos.DadosAtualizadosMedicos;
+import crud.novamente.crud.Medicos.DadosCadastrosMedicos;
+import crud.novamente.crud.Medicos.Especialidade;
 import jakarta.persistence.*;
 import lombok.*;
 

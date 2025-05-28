@@ -1,5 +1,7 @@
 package crud.novamente.crud.Medicos;
 
+import crud.novamente.crud.Model.Medicos;
+
 public record DadosListaMedicos(
     Long id,
     String nome,

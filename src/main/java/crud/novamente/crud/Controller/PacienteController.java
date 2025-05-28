@@ -1,9 +1,9 @@
 package crud.novamente.crud.Controller;
 
+import crud.novamente.crud.Model.Paciente;
 import crud.novamente.crud.Pacientes.DadosAtualizadosPacientes;
 import crud.novamente.crud.Pacientes.DadosListaPacientes;
 import crud.novamente.crud.Pacientes.DadosPacientes;
-import crud.novamente.crud.Pacientes.Paciente;
 import crud.novamente.crud.Repository.PacienteRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;

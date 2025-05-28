@@ -1,5 +1,7 @@
 package crud.novamente.crud.Pacientes;
 
+import crud.novamente.crud.Model.Paciente;
+
 public record DadosListaPacientes(
              String nome,
              String email,

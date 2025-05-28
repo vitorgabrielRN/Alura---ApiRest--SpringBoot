@@ -1,8 +1,9 @@
-package crud.novamente.crud.Pacientes;
+package crud.novamente.crud.Model;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import crud.novamente.crud.Model.Endereco;
+import crud.novamente.crud.Pacientes.DadosAtualizadosPacientes;
+import crud.novamente.crud.Pacientes.DadosPacientes;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
